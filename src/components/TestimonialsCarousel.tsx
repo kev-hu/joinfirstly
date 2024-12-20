@@ -63,7 +63,7 @@ export const TestimonialsCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="relative h-[500px] overflow-hidden"> {/* Increased height to prevent cutoff */}
+      <div className="relative h-[500px] overflow-visible"> {/* Changed overflow-hidden to overflow-visible */}
         <div
           className="absolute w-full flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -71,7 +71,7 @@ export const TestimonialsCarousel = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="w-full flex-shrink-0">
               <Card 
-                className="glass-card bg-white hover:-translate-y-2 transition-transform duration-300 mx-4 overflow-visible" // Added overflow-visible
+                className="glass-card bg-white hover:-translate-y-2 transition-transform duration-300 mx-4"
               >
                 <CardContent className="p-8">
                   <div className="flex flex-col items-center mb-6">
