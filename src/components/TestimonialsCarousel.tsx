@@ -99,7 +99,7 @@ export const TestimonialsCarousel = () => {
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-4 h-4 border-2 border-black transition-colors ${
+            className={`w-4 h-4 border-2 border-black rounded-sm transition-colors ${
               currentIndex === index ? 'bg-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'bg-white'
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
