@@ -50,13 +50,13 @@ export const WaitlistForm = () => {
           value={formData[field.name as keyof typeof formData]}
           onChange={handleChange}
           required
-          className="bg-white border-2 border-black rounded-lg px-4 py-3 text-lg font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-primary"
+          className="bg-white border-4 border-accent rounded-lg px-4 py-3 text-lg font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-primary"
         />
       ))}
       <Button
         type="submit"
         disabled={loading}
-        className="w-full bg-primary border-2 border-black rounded-lg px-6 py-3 text-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-0.5 transition-transform disabled:opacity-50"
+        className="w-full bg-primary hover:bg-primary/90 border-4 border-accent rounded-lg px-6 py-3 text-lg font-bold shadow-[8px_8px_0px_0px_#221F26] transform hover:-translate-y-1 transition-all disabled:opacity-50"
       >
         {loading ? "Joining..." : "Join Waitlist"}
       </Button>
