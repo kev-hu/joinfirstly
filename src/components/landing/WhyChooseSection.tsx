@@ -1,5 +1,4 @@
 import { Heart, Lightbulb, TrendingUp } from "lucide-react";
-import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 export const WhyChooseSection = () => {
   return (
@@ -34,9 +33,6 @@ export const WhyChooseSection = () => {
               <p className="text-gray-700">{item.description}</p>
             </div>
           ))}
-        </div>
-        <div className="section-fade">
-          <TestimonialsCarousel />
         </div>
       </div>
     </section>

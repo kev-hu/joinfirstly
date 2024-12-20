@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
-import { Quote } from "lucide-react";
+import { UserRound } from "lucide-react";
 
 const testimonials = [
   {
@@ -59,11 +59,15 @@ export const TestimonialsCarousel = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
-              className="w-full flex-shrink-0 glass-card animate-float"
+              className="w-full flex-shrink-0 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
             >
               <CardContent className="p-8">
-                <Quote className="w-10 h-10 text-primary mb-4" />
-                <p className="text-lg italic mb-6">{testimonial.quote}</p>
+                <div className="flex flex-col items-center mb-6">
+                  <div className="h-16 w-16 bg-primary rounded-lg flex items-center justify-center mb-4 border-2 border-black">
+                    <UserRound className="text-black" size={32} />
+                  </div>
+                </div>
+                <p className="text-lg mb-6 text-accent">{testimonial.quote}</p>
                 <div className="text-sm">
                   <p className="font-bold text-accent">{testimonial.name}</p>
                   <p className="text-muted">{testimonial.university}</p>
@@ -79,8 +83,8 @@ export const TestimonialsCarousel = () => {
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              currentIndex === index ? 'bg-primary' : 'bg-muted'
+            className={`w-4 h-4 border-2 border-black transition-colors ${
+              currentIndex === index ? 'bg-primary' : 'bg-white'
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
           />
