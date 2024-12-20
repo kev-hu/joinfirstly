@@ -11,7 +11,7 @@ import {
   TrendingUp,
   Instagram,
   Youtube,
-  BrandTiktok
+  Video // Replacing BrandTiktok with Video icon as a suitable alternative
 } from "lucide-react";
 
 const Index = () => {
@@ -190,7 +190,7 @@ const Index = () => {
                   <Youtube size={24} />
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-primary">
-                  <BrandTiktok size={24} />
+                  <Video size={24} /> {/* Using Video icon instead of BrandTiktok */}
                 </a>
               </div>
             </div>
