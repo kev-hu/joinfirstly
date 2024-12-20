@@ -94,14 +94,20 @@ export const TestimonialsCarousel = () => {
         </div>
       </div>
       
-      <div className="flex justify-center gap-2 -mt-4">
+      <div className="flex justify-center gap-3 mt-8">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-4 h-4 border-2 border-black rounded-sm transition-colors ${
-              currentIndex === index ? 'bg-primary shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'bg-white'
-            }`}
+            className={`
+              w-6 h-6 
+              border-2 border-black 
+              transition-all duration-200
+              ${currentIndex === index 
+                ? 'bg-primary translate-y-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                : 'bg-white hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+              }
+            `}
             aria-label={`Go to testimonial ${index + 1}`}
           />
         ))}
