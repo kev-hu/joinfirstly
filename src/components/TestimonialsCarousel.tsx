@@ -1,24 +1,37 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Alex Chen",
-    major: "Computer Science",
-    quote: "Finding a mentor who understood my challenges made all the difference.",
-    university: "Stanford University"
+    name: "Elizabeth G.",
+    university: "CSU East Bay",
+    quote: "I felt so stuck after deciding to switch away from Psychology. I stuck with Firstly because I got to meet mentors who understand my challenges. It's truly a safe space for first-generation students like me."
   },
   {
-    name: "Sarah Johnson",
-    major: "Psychology",
-    quote: "The weekly prompts helped me discover new perspectives I hadn't considered.",
-    university: "NYU"
+    name: "David C.",
+    university: "CSU East Bay",
+    quote: "I feel so lucky that CSU East Bay had Firstly. The program helped me find a group of peers that I can talk to about my career and future."
   },
   {
-    name: "Marcus Williams",
-    major: "Business Administration",
-    quote: "Connecting with peers nationwide opened up so many opportunities.",
-    university: "University of Michigan"
+    name: "Brittney S.",
+    university: "UC Irvine",
+    quote: "I couldn't find a career that I was interested in at first. But through Firstly's peer mentorship program, I met a mentor who referred me and helped me get my dream job in Tech!"
+  },
+  {
+    name: "Francine T.",
+    university: "CSU Long Beach",
+    quote: "As a freshman, I was so lost and confused about what to do with my career. I met a peer mentor who helped me reevaluate what I wanted out of myself and my career. The Firstly program gave me a support network that I can depend on for more than just career stuff."
+  },
+  {
+    name: "Anonymous Zottie",
+    university: "UC Irvine",
+    quote: "My mental health was among its lowest during this quarter. The new perspective that my mentor helped me build has really changed the way I go about my day and my college experience. Without it, I would not have made progress on the challenges that I was facing."
+  },
+  {
+    name: "Melissa N.",
+    university: "UC Irvine",
+    quote: "I felt overwhelmed at the beginning of the year, but the program gave me reassurance. Now, I feel like I can approach any class with a positive outlook and without giving up."
   }
 ];
 
@@ -32,22 +45,45 @@ export const TestimonialsCarousel = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
-    <div className="relative w-full max-w-2xl mx-auto overflow-hidden h-48">
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {testimonials.map((testimonial, index) => (
-          <Card key={index} className="w-full flex-shrink-0 mx-2">
-            <CardContent className="p-6">
-              <p className="text-lg italic mb-4">{testimonial.quote}</p>
-              <div className="text-sm text-muted-foreground">
-                <p className="font-semibold">{testimonial.name}</p>
-                <p>{testimonial.major} • {testimonial.university}</p>
-              </div>
-            </CardContent>
-          </Card>
+    <div className="w-full max-w-4xl mx-auto px-4">
+      <div className="relative overflow-hidden min-h-[300px]">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <Card 
+              key={index} 
+              className="w-full flex-shrink-0 glass-card animate-float"
+            >
+              <CardContent className="p-8">
+                <Quote className="w-10 h-10 text-primary mb-4" />
+                <p className="text-lg italic mb-6">{testimonial.quote}</p>
+                <div className="text-sm">
+                  <p className="font-bold text-accent">{testimonial.name}</p>
+                  <p className="text-muted">{testimonial.university}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+      
+      <div className="flex justify-center gap-2 mt-6">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              currentIndex === index ? 'bg-primary' : 'bg-muted'
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
         ))}
       </div>
     </div>
