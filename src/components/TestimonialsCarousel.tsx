@@ -63,7 +63,7 @@ export const TestimonialsCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="relative h-[500px] overflow-visible"> {/* Changed overflow-hidden to overflow-visible */}
+      <div className="relative h-[500px] overflow-visible">
         <div
           className="absolute w-full flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -94,7 +94,7 @@ export const TestimonialsCarousel = () => {
         </div>
       </div>
       
-      <div className="flex justify-center gap-2 mt-2"> {/* Reduced margin-top from mt-6 to mt-2 */}
+      <div className="flex justify-center gap-2 -mt-4">
         {testimonials.map((_, index) => (
           <button
             key={index}
