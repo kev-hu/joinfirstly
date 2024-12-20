@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { WhyChooseSection } from "@/components/landing/WhyChooseSection";
 import { SocialProof } from "@/components/landing/SocialProof";
+import { FAQ } from "@/components/landing/FAQ";
 import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
@@ -29,6 +30,7 @@ const Index = () => {
       <HowItWorks />
       <WhyChooseSection />
       <SocialProof />
+      <FAQ />
       <Footer />
     </div>
   );
