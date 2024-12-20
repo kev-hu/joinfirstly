@@ -36,35 +36,28 @@ export const WaitlistForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md gap-3">
-      <Input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-        className="bg-white/90"
-      />
-      <Input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        className="bg-white/90"
-      />
-      <Input
-        type="text"
-        name="major"
-        placeholder="Your Major"
-        value={formData.major}
-        onChange={handleChange}
-        required
-        className="bg-white/90"
-      />
-      <Button type="submit" disabled={loading} className="w-full">
+    <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md gap-3 mx-auto">
+      {[
+        { name: "name", placeholder: "Your Name", type: "text" },
+        { name: "email", placeholder: "Your Email", type: "email" },
+        { name: "major", placeholder: "Your Major", type: "text" }
+      ].map((field) => (
+        <Input
+          key={field.name}
+          type={field.type}
+          name={field.name}
+          placeholder={field.placeholder}
+          value={formData[field.name as keyof typeof formData]}
+          onChange={handleChange}
+          required
+          className="bg-white border-2 border-black rounded-lg px-4 py-3 text-lg font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-primary"
+        />
+      ))}
+      <Button
+        type="submit"
+        disabled={loading}
+        className="w-full bg-primary border-2 border-black rounded-lg px-6 py-3 text-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-0.5 transition-transform disabled:opacity-50"
+      >
         {loading ? "Joining..." : "Join Waitlist"}
       </Button>
     </form>
