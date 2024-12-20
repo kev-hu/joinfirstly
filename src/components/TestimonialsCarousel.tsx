@@ -63,33 +63,36 @@ export const TestimonialsCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="relative overflow-hidden min-h-[300px]">
+      <div className="relative min-h-[400px]">
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className="absolute w-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index} 
-              className="w-full flex-shrink-0 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1"
-            >
-              <CardContent className="p-8">
-                <div className="flex flex-col items-center mb-6">
-                  <div className={`p-2 ${testimonial.bgColor} rounded-lg border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
-                    <TestimonialAvatar 
-                      variant={testimonial.avatar as any}
-                      className="transform hover:scale-105 transition-transform"
-                    />
-                  </div>
-                </div>
-                <p className="text-lg mb-6 text-accent font-medium">{testimonial.quote}</p>
-                <div className="text-sm">
-                  <p className="font-bold text-accent">{testimonial.name}</p>
-                  <p className="text-muted">{testimonial.university}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          <div className="flex">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="w-full flex-shrink-0 px-4">
+                <Card 
+                  className="glass-card bg-white hover:-translate-y-2 transition-transform duration-300"
+                >
+                  <CardContent className="p-8">
+                    <div className="flex flex-col items-center mb-6">
+                      <div className={`p-2 ${testimonial.bgColor} rounded-lg border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                        <TestimonialAvatar 
+                          variant={testimonial.avatar as any}
+                          className="transform hover:scale-105 transition-transform"
+                        />
+                      </div>
+                    </div>
+                    <p className="text-lg mb-6 text-accent font-medium">{testimonial.quote}</p>
+                    <div className="text-sm">
+                      <p className="font-bold text-accent">{testimonial.name}</p>
+                      <p className="text-muted">{testimonial.university}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       

@@ -6,29 +6,53 @@ type AvatarProps = {
 };
 
 export const TestimonialAvatar: React.FC<AvatarProps> = ({ variant, className = "" }) => {
+  // Map of avatar styles for each variant
+  const avatarStyles = {
+    'glasses-girl': {
+      hair: "M10 15C10 12 12 10 15 10C18 10 20 12 20 15",
+      face: "M15 20C18.866 20 22 16.866 22 13C22 9.13401 18.866 6 15 6C11.134 6 8 9.13401 8 13C8 16.866 11.134 20 15 20Z",
+      glasses: "M12 14C12.5523 14 13 13.5523 13 13C13 12.4477 12.5523 12 12 12C11.4477 12 11 12.4477 11 13C11 13.5523 11.4477 14 12 14Z M18 14C18.5523 14 19 13.5523 19 13C19 12.4477 18.5523 12 18 12C17.4477 12 17 12.4477 17 13C17 13.5523 17.4477 14 18 14Z"
+    },
+    'cap-guy': {
+      cap: "M8 12C8 8.68629 10.6863 6 14 6H16C19.3137 6 22 8.68629 22 12V14H8V12Z",
+      face: "M12 20C15.866 20 19 16.866 19 13C19 9.13401 15.866 6 12 6C8.13401 6 5 9.13401 5 13C5 16.866 8.13401 20 12 20Z"
+    },
+    'short-hair-girl': {
+      hair: "M12 6C8.68629 6 6 8.68629 6 12V16H18V12C18 8.68629 15.3137 6 12 6Z",
+      face: "M12 20C15.866 20 19 16.866 19 13C19 9.13401 15.866 6 12 6C8.13401 6 5 9.13401 5 13C5 16.866 8.13401 20 12 20Z"
+    },
+    'anonymous': {
+      mask: "M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z",
+      eyes: "M8.5 12H8.51 M15.5 12H15.51"
+    },
+    'long-hair-girl': {
+      hair: "M6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12V20H6V12Z",
+      face: "M12 18C15.866 18 19 14.866 19 11C19 7.13401 15.866 4 12 4C8.13401 4 5 7.13401 5 11C5 14.866 8.13401 18 12 18Z"
+    }
+  };
+
+  const getAvatarContent = () => {
+    const style = avatarStyles[variant];
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-full h-full"
+      >
+        {Object.entries(style).map(([part, path], index) => (
+          <path key={`${variant}-${part}-${index}`} d={path} />
+        ))}
+      </svg>
+    );
+  };
+
   return (
     <div className={`w-20 h-20 bg-white rounded-full border-4 border-black ${className}`}>
-      <img 
-        src={`/lovable-uploads/4c7daa15-c20b-4208-a88c-46c75ba0bc9a.png`} 
-        alt="Avatar illustration"
-        className="w-full h-full object-cover"
-        style={{
-          clipPath: 'circle(50%)',
-          objectPosition: getAvatarPosition(variant)
-        }}
-      />
+      {getAvatarContent()}
     </div>
   );
-};
-
-const getAvatarPosition = (variant: string): string => {
-  const positions = {
-    'glasses-girl': '0% 0%',      // Top-left avatar
-    'cap-guy': '33.33% 0%',      // Top row, second avatar
-    'short-hair-girl': '66.66% 0%', // Top row, third avatar
-    'glasses-guy': '100% 0%',     // Top-right avatar
-    'anonymous': '33.33% 33.33%', // Middle row, second avatar
-    'long-hair-girl': '66.66% 66.66%' // Middle row, third avatar
-  };
-  return positions[variant as keyof typeof positions] || '0% 0%';
 };
