@@ -1,47 +1,64 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
+import { useToast } from "@/components/ui/use-toast";
 
 export const WaitlistForm = () => {
-  const [email, setEmail] = useState("");
-  const [school, setSchool] = useState("");
-  const [gradYear, setGradYear] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    major: ""
+  });
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
-    toast.success("Thanks for joining our waitlist!");
+    setLoading(true);
+    
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    toast({
+      title: "Welcome to Firstly!",
+      description: "You've been added to our waitlist. We'll be in touch soon!",
+    });
+    
+    setFormData({ name: "", email: "", major: "" });
+    setLoading(false);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-      <Input
-        type="email"
-        placeholder="Your school email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="glass-card"
-      />
-      <Input
-        type="text"
-        placeholder="Your university (e.g., UC Irvine)"
-        value={school}
-        onChange={(e) => setSchool(e.target.value)}
-        required
-        className="glass-card"
-      />
-      <Input
-        type="text"
-        placeholder="Expected graduation year (e.g., 2025)"
-        value={gradYear}
-        onChange={(e) => setGradYear(e.target.value)}
-        required
-        className="glass-card"
-      />
-      <Button type="submit" className="w-full glass-card bg-primary text-white hover:bg-primary/90">
-        Join Waitlist
+    <form onSubmit={handleSubmit} className="flex flex-col w-full max-w-md gap-3 mx-auto">
+      {[
+        { name: "name", placeholder: "Your Name", type: "text" },
+        { name: "email", placeholder: "Your Email", type: "email" },
+        { name: "major", placeholder: "Your Major", type: "text" }
+      ].map((field) => (
+        <Input
+          key={field.name}
+          type={field.type}
+          name={field.name}
+          placeholder={field.placeholder}
+          value={formData[field.name as keyof typeof formData]}
+          onChange={handleChange}
+          required
+          className="bg-white border-4 border-accent rounded-lg px-4 py-3 text-lg font-medium placeholder:text-gray-500 focus:ring-2 focus:ring-primary"
+        />
+      ))}
+      <Button
+        type="submit"
+        disabled={loading}
+        className="w-full bg-primary hover:bg-primary/90 border-4 border-accent rounded-lg px-6 py-3 text-lg font-bold shadow-[8px_8px_0px_0px_#221F26] transform hover:-translate-y-1 transition-all disabled:opacity-50"
+      >
+        {loading ? "Joining..." : "Join Waitlist"}
       </Button>
     </form>
   );

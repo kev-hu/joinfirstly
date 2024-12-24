@@ -36,7 +36,7 @@ export const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white border-b-4 border-accent" id="faq">
+    <section className="py-20 px-4 bg-white border-b-4 border-accent">
       <div className="container max-w-4xl">
         <div className="text-center mb-16 section-fade">
           <h2 className="text-4xl font-black mb-4">Frequently Asked Questions</h2>
@@ -70,15 +70,18 @@ export const FAQ = () => {
         <div className="mt-12 text-center glass-card p-8 rounded-lg section-fade">
           <p className="text-lg mb-4">
             Still have questions? Reach out to us at{" "}
-            <a href="mailto:kevin@joinfirstly.com" className="text-primary hover:underline">
-              kevin@joinfirstly.com
+            <a href="mailto:support@joinfirstly.com" className="text-primary hover:underline">
+              support@joinfirstly.com
             </a>
           </p>
           <div className="flex justify-center gap-4">
-            <a href="https://linkedin.com/company/firstlypro" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors">
+            <a href="#" className="text-accent hover:text-primary transition-colors">
+              Twitter
+            </a>
+            <a href="#" className="text-accent hover:text-primary transition-colors">
               LinkedIn
             </a>
-            <a href="https://linkedin.com/company/firstlypro" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors">
+            <a href="#" className="text-accent hover:text-primary transition-colors">
               Instagram
             </a>
           </div>
