@@ -78,7 +78,7 @@ export const FAQ = () => {
             <a href="https://linkedin.com/company/firstlypro" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors">
               LinkedIn
             </a>
-            <a href="https://linkedin.com/company/firstlypro" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors">
+            <a href="https://instagram.com/firstly.pro" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-primary transition-colors">
               Instagram
             </a>
           </div>
