@@ -1,4 +1,4 @@
-import { Instagram, Youtube, Video } from "lucide-react";
+import { Linkedin, Instagram, Youtube } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -22,6 +22,14 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="bg-white p-2 rounded-lg border-2 border-black hover:bg-yellow-300 transition-colors"
               >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="https://linkedin.com/company/firstlypro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-2 rounded-lg border-2 border-black hover:bg-yellow-300 transition-colors"
+              >
                 <Instagram size={24} />
               </a>
               <a
@@ -31,14 +39,6 @@ export const Footer = () => {
                 className="bg-white p-2 rounded-lg border-2 border-black hover:bg-yellow-300 transition-colors"
               >
                 <Youtube size={24} />
-              </a>
-              <a
-                href="https://linkedin.com/company/firstlypro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white p-2 rounded-lg border-2 border-black hover:bg-yellow-300 transition-colors"
-              >
-                <Video size={24} />
               </a>
             </div>
           </div>

@@ -4,43 +4,54 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
 export const WaitlistForm = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [school, setSchool] = useState("");
+  const [college, setCollege] = useState("");
   const [gradYear, setGradYear] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add form submission logic here
     toast.success("Thanks for joining our waitlist!");
   };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
       <Input
+        type="text"
+        placeholder="Your Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
+      />
+      <Input
         type="email"
-        placeholder="Your school email"
+        placeholder="Your Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="glass-card"
+        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
       <Input
         type="text"
-        placeholder="Your university (e.g., UC Irvine)"
-        value={school}
-        onChange={(e) => setSchool(e.target.value)}
+        placeholder="Your College"
+        value={college}
+        onChange={(e) => setCollege(e.target.value)}
         required
-        className="glass-card"
+        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
       <Input
         type="text"
-        placeholder="Expected graduation year (e.g., 2025)"
+        placeholder="Expected Graduation Year"
         value={gradYear}
         onChange={(e) => setGradYear(e.target.value)}
         required
-        className="glass-card"
+        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
-      <Button type="submit" className="w-full glass-card bg-primary text-white hover:bg-primary/90">
+      <Button 
+        type="submit" 
+        className="w-full h-14 text-lg font-semibold bg-primary text-white hover:bg-primary/90 rounded-xl border-4 border-accent"
+      >
         Join Waitlist
       </Button>
     </form>
