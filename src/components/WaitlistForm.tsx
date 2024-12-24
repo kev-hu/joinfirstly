@@ -8,10 +8,41 @@ export const WaitlistForm = () => {
   const [email, setEmail] = useState("");
   const [college, setCollege] = useState("");
   const [gradYear, setGradYear] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thanks for joining our waitlist!");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://hooks.zapier.com/hooks/catch/13650783/28rxnc0/", {
+        method: "POST",
+        mode: "no-cors", // Required for Zapier webhooks
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          college,
+          gradYear,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      // Since we're using no-cors, we won't get a proper response
+      // Instead, we'll show a success message and clear the form
+      toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
+      setName("");
+      setEmail("");
+      setCollege("");
+      setGradYear("");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -50,9 +81,10 @@ export const WaitlistForm = () => {
       />
       <Button 
         type="submit" 
-        className="w-full h-12 text-lg font-bold bg-primary text-white rounded-lg border-4 border-accent shadow-[4px_4px_0px_0px_#221F26] transform transition-all hover:-translate-y-0.5 hover:shadow-[4px_6px_0px_0px_#221F26]"
+        disabled={isSubmitting}
+        className="w-full h-12 text-lg font-bold bg-primary text-white rounded-lg border-4 border-accent shadow-[4px_4px_0px_0px_#221F26] transform transition-all hover:-translate-y-0.5 hover:shadow-[4px_6px_0px_0px_#221F26] disabled:opacity-50"
       >
-        Join Waitlist
+        {isSubmitting ? "Submitting..." : "Join Waitlist"}
       </Button>
     </form>
   );
