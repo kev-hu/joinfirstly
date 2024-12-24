@@ -22,7 +22,7 @@ export const WaitlistForm = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
-        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
+        className="h-12 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
       <Input
         type="email"
@@ -30,7 +30,7 @@ export const WaitlistForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
+        className="h-12 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
       <Input
         type="text"
@@ -38,7 +38,7 @@ export const WaitlistForm = () => {
         value={college}
         onChange={(e) => setCollege(e.target.value)}
         required
-        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
+        className="h-12 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
       <Input
         type="text"
@@ -46,11 +46,11 @@ export const WaitlistForm = () => {
         value={gradYear}
         onChange={(e) => setGradYear(e.target.value)}
         required
-        className="h-14 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
+        className="h-12 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />
       <Button 
         type="submit" 
-        className="w-full h-14 text-lg font-semibold bg-primary text-white hover:bg-primary/90 rounded-xl border-4 border-accent"
+        className="w-full h-12 text-lg font-bold bg-primary text-white rounded-lg border-4 border-accent shadow-[4px_4px_0px_0px_#221F26] transform transition-all hover:-translate-y-0.5 hover:shadow-[4px_6px_0px_0px_#221F26]"
       >
         Join Waitlist
       </Button>

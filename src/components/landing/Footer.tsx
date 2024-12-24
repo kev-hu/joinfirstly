@@ -25,7 +25,7 @@ export const Footer = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="https://linkedin.com/company/firstlypro"
+                href="https://instagram.com/firstly.pro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white p-2 rounded-lg border-2 border-black hover:bg-yellow-300 transition-colors"
