@@ -15,10 +15,12 @@ export const SocialProof = () => {
             Join thousands of students who have found guidance and support through our peer mentorship program
           </p>
           
-          <TestimonialsCarousel />
+          <div className="mb-16">
+            <TestimonialsCarousel />
+          </div>
           
           <div className={`
-            mt-8 max-w-xl mx-auto bg-white 
+            max-w-xl mx-auto bg-white 
             ${isMobile ? 'p-6' : 'p-8'} 
             rounded-lg glass-card
           `}>

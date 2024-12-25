@@ -64,7 +64,7 @@ export const TestimonialsCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      {/* Navigation dots moved above */}
+      {/* Navigation dots */}
       <div className={`
         flex justify-center mb-6
         ${isMobile ? 'gap-2' : 'gap-3'}
@@ -87,9 +87,10 @@ export const TestimonialsCarousel = () => {
         ))}
       </div>
 
-      <div className={`relative ${isMobile ? 'h-[400px]' : 'h-[500px]'} overflow-visible mb-12`}>
+      {/* Carousel container with dynamic height */}
+      <div className="relative w-full overflow-hidden mb-12">
         <div
-          className="absolute w-full flex transition-transform duration-500 ease-in-out"
+          className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {testimonials.map((testimonial, index) => (
@@ -97,7 +98,7 @@ export const TestimonialsCarousel = () => {
               <Card 
                 className={`
                   glass-card bg-white hover:-translate-y-2 transition-transform duration-300 
-                  ${isMobile ? 'mx-2 max-w-[90%]' : 'mx-4'}
+                  ${isMobile ? 'mx-2 max-w-[90%] min-h-[300px]' : 'mx-4'}
                 `}
               >
                 <CardContent className={`${isMobile ? 'p-6' : 'p-8'}`}>
