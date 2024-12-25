@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useEffect } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { TestimonialAvatar } from "./avatars/TestimonialAvatar";
 
 const testimonials = [
   {
@@ -49,7 +49,6 @@ const testimonials = [
 
 export const TestimonialsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -64,7 +63,7 @@ export const TestimonialsCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="relative h-auto md:h-[500px] mb-16 md:mb-8">
+      <div className="relative h-[500px] overflow-visible">
         <div
           className="absolute w-full flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -72,20 +71,15 @@ export const TestimonialsCarousel = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="w-full flex-shrink-0">
               <Card 
-                className={`
-                  glass-card bg-white 
-                  hover:-translate-y-2 transition-transform duration-300 
-                  mx-4
-                  ${isMobile ? 'min-h-[420px]' : 'min-h-[350px]'}
-                `}
+                className="glass-card bg-white hover:-translate-y-2 transition-transform duration-300 mx-4"
               >
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex flex-col items-center mb-4 md:mb-6">
+                <CardContent className="p-8">
+                  <div className="flex flex-col items-center mb-6">
                     <div className={`p-2 ${testimonial.bgColor} rounded-lg border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
-                      <span className="text-3xl md:text-4xl">{testimonial.emoji}</span>
+                      <span className="text-4xl">{testimonial.emoji}</span>
                     </div>
                   </div>
-                  <p className="text-base md:text-lg mb-4 md:mb-6 text-accent font-medium">{testimonial.quote}</p>
+                  <p className="text-lg mb-6 text-accent font-medium">{testimonial.quote}</p>
                   <div className="text-sm">
                     <p className="font-bold text-accent">{testimonial.name}</p>
                     <p className="text-muted">{testimonial.university}</p>
@@ -97,18 +91,18 @@ export const TestimonialsCarousel = () => {
         </div>
       </div>
       
-      <div className="flex justify-center gap-2 md:gap-3 fixed bottom-4 left-0 right-0 md:relative md:bottom-auto bg-white/80 md:bg-transparent py-2 md:py-0">
+      <div className="flex justify-center gap-3 mt-8">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
             className={`
-              w-4 h-4 md:w-6 md:h-6 
+              w-6 h-6 
               border-2 border-black 
               transition-all duration-200
               ${currentIndex === index 
-                ? 'bg-primary translate-y-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
-                : 'bg-white hover:-translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                ? 'bg-primary translate-y-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' 
+                : 'bg-white hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
               }
             `}
             aria-label={`Go to testimonial ${index + 1}`}
