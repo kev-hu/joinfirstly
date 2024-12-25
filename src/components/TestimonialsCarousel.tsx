@@ -63,7 +63,7 @@ export const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4">
+    <div className="w-full max-w-4xl mx-auto px-4 overflow-visible">
       {/* Navigation dots */}
       <div className={`
         flex justify-center mb-6
@@ -87,8 +87,8 @@ export const TestimonialsCarousel = () => {
         ))}
       </div>
 
-      {/* Carousel container with dynamic height */}
-      <div className="relative w-full overflow-hidden mb-12">
+      {/* Carousel container with overflow visible */}
+      <div className="relative w-full overflow-visible mb-12">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
