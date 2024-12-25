@@ -18,7 +18,7 @@ export const SocialProof = () => {
           <TestimonialsCarousel />
           
           <div className={`
-            mt-16 max-w-xl mx-auto bg-white 
+            mt-8 max-w-xl mx-auto bg-white 
             ${isMobile ? 'p-6' : 'p-8'} 
             rounded-lg glass-card
           `}>

@@ -64,7 +64,30 @@ export const TestimonialsCarousel = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-      <div className={`relative ${isMobile ? 'h-[400px]' : 'h-[500px]'} overflow-visible`}>
+      {/* Navigation dots moved above */}
+      <div className={`
+        flex justify-center mb-6
+        ${isMobile ? 'gap-2' : 'gap-3'}
+      `}>
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`
+              ${isMobile ? 'w-4 h-4' : 'w-6 h-6'}
+              border-2 border-black 
+              transition-all duration-200
+              ${currentIndex === index 
+                ? `bg-primary translate-y-0 ${isMobile ? 'shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'}` 
+                : `bg-white hover:-translate-y-1 ${isMobile ? 'hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'}`
+              }
+            `}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      <div className={`relative ${isMobile ? 'h-[400px]' : 'h-[500px]'} overflow-visible mb-12`}>
         <div
           className="absolute w-full flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -107,28 +130,6 @@ export const TestimonialsCarousel = () => {
             </div>
           ))}
         </div>
-      </div>
-      
-      <div className={`
-        flex justify-center 
-        ${isMobile ? 'gap-2 mt-4' : 'gap-3 mt-8'}
-      `}>
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`
-              ${isMobile ? 'w-4 h-4' : 'w-6 h-6'}
-              border-2 border-black 
-              transition-all duration-200
-              ${currentIndex === index 
-                ? `bg-primary translate-y-0 ${isMobile ? 'shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'}` 
-                : `bg-white hover:-translate-y-1 ${isMobile ? 'hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]' : 'hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'}`
-              }
-            `}
-            aria-label={`Go to testimonial ${index + 1}`}
-          />
-        ))}
       </div>
     </div>
   );
