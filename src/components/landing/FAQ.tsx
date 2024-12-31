@@ -10,27 +10,27 @@ export const FAQ = () => {
   const faqs = [
     {
       question: "What is Firstly?",
-      answer: "Firstly is a peer-to-peer mentoring community for high school students looking for real, relatable support to navigate academics, extracurriculars, and personal growth.",
+      answer: "Firstly is a peer mentorship program for college students. We connect you with peers based on shared experiences to discuss weekly prompts, share insights, and explore trending topics in student life.",
       icon: <Info className="w-5 h-5" />
     },
     {
       question: "How does it work?",
-      answer: "Sign up, get matched with a peer mentor who has shared interests or experiences, and start engaging with weekly discussion prompts. You can also explore mentors from other schools nationwide.",
+      answer: "It's simple! After signing up, you'll be matched with a peer mentor who has relevant experiences. Each week, you'll receive a thought-provoking prompt to guide your conversation. You can connect via chat or video and share your takeaways with the community.",
       icon: <MessageSquare className="w-5 h-5" />
     },
     {
       question: "Who can join Firstly?",
-      answer: "Any high school student (ages 14–18). Parents can also help sign up their teens to ensure they're getting reliable, peer-based guidance.",
+      answer: "Firstly is open to college students from any university or major who want to connect, share, and grow through peer mentorship.",
       icon: <HelpCircle className="w-5 h-5" />
     },
     {
       question: "Is Firstly free to use?",
-      answer: "Yes! We're here to help high school students find supportive connections at no cost.",
+      answer: "Yes! Firstly is completely free to join during the beta phase. Later, we may introduce optional premium features for those who want an enhanced experience.",
       icon: <Info className="w-5 h-5" />
     },
     {
       question: "How are mentors and mentees matched?",
-      answer: "We use a matching system based on interests, goals, grade level, and school involvement to help create the best possible peer connections.",
+      answer: "We match you based on a combination of your preferences, experiences, and goals. This ensures meaningful and relevant conversations with your peer mentor.",
       icon: <MessageSquare className="w-5 h-5" />
     }
   ];

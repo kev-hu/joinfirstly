@@ -7,7 +7,7 @@ export const HowItWorks = () => {
         <div className="text-center mb-12 section-fade">
           <h2 className="text-4xl font-black mb-4">Here's How It Works</h2>
           <p className="text-gray-700 max-w-xl mx-auto font-medium">
-            Join a supportive community of high school students helping each other stay motivated, plan for the future, and grow in confidence.
+            Join a community of students helping each other succeed
           </p>
         </div>
         
@@ -18,19 +18,19 @@ export const HowItWorks = () => {
             {
               icon: <Users className="text-accent" size={32} />,
               title: "Match with Peers",
-              description: "Connect with students who share your interests, goals, and day-to-day high school experiences",
+              description: "Connect with students who share your interests and experiences",
               align: "right"
             },
             {
               icon: <MessageSquare className="text-accent" size={32} />,
               title: "Weekly Discussions",
-              description: "Engage in prompts designed to spark meaningful conversations—about classes, college readiness, extracurriculars, and everything in between",
+              description: "Engage in prompts designed to spark meaningful conversations",
               align: "left"
             },
             {
               icon: <MapPin className="text-accent" size={32} />,
               title: "Nationwide Network",
-              description: "Discover insights from students across the country who can help you see what's possible beyond your local circles",
+              description: "Discover insights from students across the country",
               align: "right"
             }
           ].map((item, index) => (

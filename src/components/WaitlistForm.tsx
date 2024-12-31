@@ -6,7 +6,7 @@ import { toast } from "sonner";
 export const WaitlistForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [school, setSchool] = useState("");
+  const [college, setCollege] = useState("");
   const [gradYear, setGradYear] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -17,23 +17,25 @@ export const WaitlistForm = () => {
     try {
       const response = await fetch("https://hooks.zapier.com/hooks/catch/13650783/28rxnc0/", {
         method: "POST",
-        mode: "no-cors",
+        mode: "no-cors", // Required for Zapier webhooks
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name,
           email,
-          school,
+          college,
           gradYear,
           timestamp: new Date().toISOString(),
         }),
       });
 
+      // Since we're using no-cors, we won't get a proper response
+      // Instead, we'll show a success message and clear the form
       toast.success("Thanks for joining our waitlist! We'll be in touch soon.");
       setName("");
       setEmail("");
-      setSchool("");
+      setCollege("");
       setGradYear("");
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -63,9 +65,9 @@ export const WaitlistForm = () => {
       />
       <Input
         type="text"
-        placeholder="Your High School"
-        value={school}
-        onChange={(e) => setSchool(e.target.value)}
+        placeholder="Your College"
+        value={college}
+        onChange={(e) => setCollege(e.target.value)}
         required
         className="h-12 text-lg px-6 rounded-xl border-4 border-accent bg-white placeholder:text-gray-500"
       />

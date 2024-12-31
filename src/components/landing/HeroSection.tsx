@@ -9,12 +9,12 @@ export const HeroSection = () => {
             Now in Beta
           </span>
           <h1 className="text-5xl md:text-7xl font-black text-balance leading-tight">
-            Your High School Journey,
+            Your College Journey,
             <br />
             <span className="bg-primary text-white px-4">Better Together</span>
           </h1>
           <p className="text-xl text-accent max-w-2xl mx-auto font-medium">
-            Connect with peer mentors who understand the ups and downs of high school life and help you navigate the path to success.
+            Connect with peer mentors who understand your college experience and help you navigate your journey to success.
           </p>
           <WaitlistForm />
         </div>
