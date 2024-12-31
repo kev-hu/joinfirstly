@@ -1,13 +1,13 @@
-import { Users, MessageSquare, MapPin } from "lucide-react";
+import { Users, MessageSquare, MapPin, ClipboardCheck, BarChart } from "lucide-react";
 
 export const HowItWorks = () => {
   return (
     <section className="py-16 px-4 bg-[#FEF7E2] border-b-4 border-accent">
       <div className="container max-w-5xl">
         <div className="text-center mb-12 section-fade">
-          <h2 className="text-4xl font-black mb-4">Here's How It Works</h2>
+          <h2 className="text-4xl font-black mb-4">Program Structure</h2>
           <p className="text-gray-700 max-w-xl mx-auto font-medium">
-            Join a supportive community of high school students helping each other stay motivated, plan for the future, and grow in confidence.
+            A structured approach to help your teen develop essential life and academic skills through peer mentoring.
           </p>
         </div>
         
@@ -17,20 +17,32 @@ export const HowItWorks = () => {
           {[
             {
               icon: <Users className="text-accent" size={32} />,
-              title: "Match with Peers",
-              description: "Connect with students who share your interests, goals, and day-to-day high school experiences",
+              title: "Registration & Matching",
+              description: "Parents fill out a quick questionnaire about their teen's interests, academic goals, and personality. We use this info to match them with a compatible peer mentor.",
               align: "right"
             },
             {
               icon: <MessageSquare className="text-accent" size={32} />,
-              title: "Weekly Discussions",
-              description: "Engage in prompts designed to spark meaningful conversations—about classes, college readiness, extracurriculars, and everything in between",
+              title: "Scheduled 1:1 Sessions",
+              description: "Students connect via live video chat for structured conversations around essential life and academic skills.",
               align: "left"
             },
             {
+              icon: <ClipboardCheck className="text-accent" size={32} />,
+              title: "Professional Oversight",
+              description: "Our trained facilitators oversee discussion topics, ensuring a safe, productive environment.",
+              align: "right"
+            },
+            {
               icon: <MapPin className="text-accent" size={32} />,
-              title: "Nationwide Network",
-              description: "Discover insights from students across the country who can help you see what's possible beyond your local circles",
+              title: "Shared Text Updates",
+              description: "After each session, a summary is sent via a shared text thread that includes the parent and student.",
+              align: "left"
+            },
+            {
+              icon: <BarChart className="text-accent" size={32} />,
+              title: "Progress Tracking",
+              description: "Monthly progress reports with insights on skill development, session highlights, and suggestions for growth.",
               align: "right"
             }
           ].map((item, index) => (

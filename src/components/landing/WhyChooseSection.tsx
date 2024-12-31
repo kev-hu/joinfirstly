@@ -1,28 +1,36 @@
-import { Heart, Lightbulb, TrendingUp } from "lucide-react";
+import { Heart, Lightbulb, TrendingUp, GraduationCap } from "lucide-react";
 
 export const WhyChooseSection = () => {
   return (
     <section className="py-20 px-4 bg-[#F3E8FF] border-b-4 border-black">
       <div className="container max-w-6xl">
         <div className="text-center mb-16 section-fade">
-          <h2 className="text-4xl font-black mb-4">Why Students Love Firstly</h2>
+          <h2 className="text-4xl font-black mb-4">Key Benefits</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            What sets our peer-mentoring program apart from traditional tutoring or extracurriculars
+          </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-4 gap-8 mb-16">
           {[
             {
               icon: <Heart className="text-black" size={32} />,
-              title: "Real Mentorship",
-              description: "Find peers who truly understand the unique challenges of high school"
+              title: "Confidence & Communication",
+              description: "Teens learn to speak up, share ideas, and empathize with peers—crucial life and leadership abilities"
             },
             {
               icon: <Lightbulb className="text-black" size={32} />,
-              title: "Actionable Insights",
-              description: "Weekly prompts that inspire personal growth, time management, and self-discovery"
+              title: "Academic Motivation",
+              description: "Peer mentors provide relatable tips on study habits, time management, and managing stress"
             },
             {
               icon: <TrendingUp className="text-black" size={32} />,
-              title: "Trendspotting",
-              description: "Stay in the loop on what's relevant to teens nationwide"
+              title: "Emotional Resilience",
+              description: "Safe conversations around everyday challenges—bullying, social pressure, or balancing responsibilities"
+            },
+            {
+              icon: <GraduationCap className="text-black" size={32} />,
+              title: "College & Career Readiness",
+              description: "Encourages goal setting, interview practice, and building a supportive network early on"
             }
           ].map((item, index) => (
             <div key={index} className="text-center bg-white p-6 rounded-lg border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-1 transition-transform">

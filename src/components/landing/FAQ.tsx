@@ -1,4 +1,4 @@
-import { MessageSquare, HelpCircle, Info } from "lucide-react";
+import { MessageSquare, HelpCircle, Info, Clock, Users } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -9,29 +9,29 @@ import {
 export const FAQ = () => {
   const faqs = [
     {
-      question: "What is Firstly?",
-      answer: "Firstly is a peer-to-peer mentoring community for high school students looking for real, relatable support to navigate academics, extracurriculars, and personal growth.",
+      question: "Is this safe?",
+      answer: "We perform background checks on facilitators, enforce privacy protocols, and moderate sessions. Summaries are shared with parents for added transparency.",
       icon: <Info className="w-5 h-5" />
     },
     {
-      question: "How does it work?",
-      answer: "Sign up, get matched with a peer mentor who has shared interests or experiences, and start engaging with weekly discussion prompts. You can also explore mentors from other schools nationwide.",
+      question: "How long are the sessions?",
+      answer: "Each session runs 30–45 minutes, with flexibility to accommodate busy student schedules.",
+      icon: <Clock className="w-5 h-5" />
+    },
+    {
+      question: "What if the match isn't a good fit?",
+      answer: "We'll work with you to rematch the student at any time, no extra cost.",
+      icon: <Users className="w-5 h-5" />
+    },
+    {
+      question: "Is it like tutoring or therapy?",
+      answer: "It's peer-to-peer mentoring focused on holistic skills (academic, social, emotional). For academic tutoring or therapy needs, we can recommend additional resources.",
       icon: <MessageSquare className="w-5 h-5" />
     },
     {
-      question: "Who can join Firstly?",
-      answer: "Any high school student (ages 14–18). Parents can also help sign up their teens to ensure they're getting reliable, peer-based guidance.",
+      question: "How do you match mentors and mentees?",
+      answer: "We use a comprehensive matching system based on interests, goals, grade level, and personality traits to create the most beneficial peer connections.",
       icon: <HelpCircle className="w-5 h-5" />
-    },
-    {
-      question: "Is Firstly free to use?",
-      answer: "Yes! We're here to help high school students find supportive connections at no cost.",
-      icon: <Info className="w-5 h-5" />
-    },
-    {
-      question: "How are mentors and mentees matched?",
-      answer: "We use a matching system based on interests, goals, grade level, and school involvement to help create the best possible peer connections.",
-      icon: <MessageSquare className="w-5 h-5" />
     }
   ];
 
@@ -41,7 +41,7 @@ export const FAQ = () => {
         <div className="text-center mb-16 section-fade">
           <h2 className="text-4xl font-black mb-4">Frequently Asked Questions</h2>
           <p className="text-gray-700 max-w-xl mx-auto">
-            Everything you need to know about Firstly
+            Everything you need to know about our peer mentoring program
           </p>
         </div>
 
