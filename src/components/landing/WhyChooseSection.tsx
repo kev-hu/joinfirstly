@@ -12,17 +12,17 @@ export const WhyChooseSection = () => {
             {
               icon: <Heart className="text-black" size={32} />,
               title: "Real Mentorship",
-              description: "Connect with someone who truly gets you"
+              description: "Find peers who truly understand the unique challenges of high school"
             },
             {
               icon: <Lightbulb className="text-black" size={32} />,
               title: "Actionable Insights",
-              description: "Weekly prompts that inspire growth"
+              description: "Weekly prompts that inspire personal growth, time management, and self-discovery"
             },
             {
               icon: <TrendingUp className="text-black" size={32} />,
               title: "Trendspotting",
-              description: "Stay in the loop with what's relevant in student life"
+              description: "Stay in the loop on what's relevant to teens nationwide"
             }
           ].map((item, index) => (
             <div key={index} className="text-center bg-white p-6 rounded-lg border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-translate-y-1 transition-transform">
