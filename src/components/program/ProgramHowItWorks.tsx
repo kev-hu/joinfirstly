@@ -22,7 +22,7 @@ export const ProgramHowItWorks = () => {
       icon: MessageCircle,
       title: "Weekly Chat & Topic",
       description: [
-        "Every Wednesday, we send out a Topic of the Week—like "Study Hacks for Finals" or "Overcoming Test Anxiety."",
+        'Every Wednesday, we send out a Topic of the Week—like "Study Hacks for Finals" or "Overcoming Test Anxiety."',
         "Students and mentors hop on a quick chat or video call to discuss the prompt, set goals, and tackle any current challenges.",
       ],
     },
